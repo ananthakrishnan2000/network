@@ -1,16 +1,11 @@
-#!/bin/bash
-#Author :A S ANANTHAKRISHNAN
-#23MCA001
-echo "Enter a number:"
+#!/bin/sh
+echo Author= A S ANANTHAKRISHNAN
+echo 23MCA001
 read num
-reverse() {
-    local n=$1
-    local rev=0
-    while [ $n -gt 0 ]; do
-        remainder=$((n % 10))
-        rev=$((rev * 10 + remainder))
-        n=$((n / 10))
-    done
-    echo $rev
-}
-echo "Reverse of $num is: $(reverse $num)"
+reverse=$(echo "$num" | rev)
+if [ "$num" -eq "$reverse" ]; then 
+ echo "$num is same when reversed." 
+else 
+ echo "$num is not same when reversed."
+  fi
+
